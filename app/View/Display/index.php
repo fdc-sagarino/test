@@ -1,5 +1,5 @@
 <div>
-    <?php print_r($this->Flash->render('error')); ?>
+    <?php echo $this->Flash->render('error'); ?>
     <?php echo $this->Form->create('Records',['class'=>'form-inline', 'url' => '/records/save']); ?>
     <div class="col-md-6">
         <div class="form-group row">
