@@ -8,10 +8,8 @@ class RecordsController extends AppController {
     public function save() {
         if ($this->request->is('post')) {            
             if (!$this->Records->save($this->request->data)) {
-                print_r($this->Records->validationErrors); die();
-                $data = implode(', ',$this->Records->validationErrors);
-                print_r($data); die();
-                $this->Flash->error(implode('<br>',$this->Records->validationErrors), array(
+
+                $this->Flash->error(json_encode($this->Records->validationErrors), array(
                     'key' => 'error',
                     'params' => $this->Records->validationErrors
                 ));
